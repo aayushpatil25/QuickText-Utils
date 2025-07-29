@@ -50,23 +50,25 @@ function App() {
   };
 
   return (
-    <Router>
-      <Navbar
-        title="QuickText Utils"
-        about="About TextUtils"
-        mode={mode}
-        toggleMode={toggleMode}
-        btnText={btnText}
-        applyDarkColor={applyDarkColor}
-      />
-      <Alert alert={alert} />
-      <div className="container my-3">
-        <Routes>
-          <Route path="/about" element={<About mode={mode} />} />
-          <Route path="/" element={<Textform showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />} />
-        </Routes>
-      </div>
-    </Router>
+     <Router>
+  <Navbar
+    title="QuickText Utils"
+    about="About TextUtils"
+    mode={mode}
+    toggleMode={toggleMode}
+    btnText={btnText}
+    applyDarkColor={applyDarkColor}
+  />
+  <Alert alert={alert} />
+  <div className="container my-3">
+    <Routes>
+      <Route path="/about" element={<About mode={mode} />} />
+      <Route path="/" element={<Textform showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />} />
+    </Routes>
+  </div>
+</Router>
+
+    
   );
 }
 

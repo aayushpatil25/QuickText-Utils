@@ -17,7 +17,7 @@ export default function Textform(props) {
 
   const handleClearText = () => {
     console.log("Clear text was clicked and it clears the text");
-    setText(" "); // actually clears the text
+    setText(""); // actually clears the text
      props.showAlert(":\n Text cleared successfully","success")
   };
 
@@ -32,6 +32,10 @@ export default function Textform(props) {
     navigator.clipboard.writeText(text.value)
     props.showAlert(":\n Text copied successfully","success");
   }
+
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  const charCount = text.replace(/\s/g, "").length;
+
 
   
   return (
@@ -48,7 +52,7 @@ export default function Textform(props) {
      
       <div className="container my-3">
         <h2>Your text summary</h2>
-        <p>{text.split(" ").length - 1 } word and {text.length} characters</p>
+        <p>{wordCount} words and {charCount} characters</p>
         <p>{0.008 * text.split("").length } Minutes to read </p>
         <h2>Preview</h2>
         <p>{text}</p>
